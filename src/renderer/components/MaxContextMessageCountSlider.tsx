@@ -32,12 +32,12 @@ export default function MaxContextMessageCountSlider(props: Props) {
                         }}
                         aria-labelledby="discrete-slider"
                         valueLabelDisplay="auto"
-                        step={2}
+                        step={20}
                         min={0}
-                        max={22}
+                        max={1000}
                         marks
                         valueLabelFormat={(value) => {
-                            if (value === 22) {
+                            if (value === 1000) {
                                 return t('No Limit')
                             }
                             return value
@@ -46,7 +46,7 @@ export default function MaxContextMessageCountSlider(props: Props) {
                 </Box>
                 <TextField
                     sx={{ marginLeft: 2, width: '100px' }}
-                    value={props.value > 20 ? t('No Limit') : props.value}
+                    value={props.value > 1000 ? t('No Limit') : props.value}
                     onChange={(event) => {
                         const s = event.target.value.trim()
                         const v = parseInt(s)
